@@ -1,10 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-ALPHA = 0.58   # capital share in agriculture
-BETA = 0.42   # capital share in manufacturing
-KBAR = 100  # Total capital supply
-LBAR = 100  # Total labor supply
+ALPHA = 0.25   # capital share in agriculture
+BETA = 0.06   # capital share in manufacturing
+KBAR = 2749  # Total capital supply
+LBAR = 70600  # Total labor supply
 p = 1      # =Pa/Pm  relative price of ag goods
 
 def F(K,L,alpha=ALPHA):
@@ -39,9 +39,9 @@ def ppf(LA,Kbar=KBAR, Lbar=LBAR,alpha=ALPHA,beta=BETA):
     ax.set_xlim(0, Lbar)
     ax.set_ylim(0, Kbar)
     ax.plot(Qa, Qm,'k-')
-    ax.set_xlabel(r'$Q_A$',fontsize=18)
-    ax.set_ylabel(r'$Q_M$',fontsize=18)
+    ax.set_xlabel(r'$Q_{cobre}$',fontsize=18)
+    ax.set_ylabel(r'$Q_{plata}$',fontsize=18)
     plt.show()
 
 fig, ax = plt.subplots(figsize=(7,6))
-ppf(30,alpha=0.8,beta=0.5)
+ppf(30)  #Saque los otros parametros porque es redundante escribirlos siendo que se definen al principio
